@@ -17,18 +17,24 @@ let listOfTheCenter = [
   "Kerala",
 ];
 
+let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let IndNum = /^[0]?[789]\d{9}$/;
+
 function submit() {
   // Create the Element for the table push
 
-  if (userName.value === "" || email.value === "" || number.value === "" ) {
+  if (userName.value === "" || email.value === "" || number.value === "") {
     alert("Fill All The Details");
+  } else if (!mailformat.test(email.value)) {
+    alert("please Enter the right Gmail");
   } else if (
     match.some((e) => {
       return e.email === email.value;
     })
   ) {
     alert("This email id is already Register");
-  
+  } else if (!IndNum.test(number.value)) {
+    alert("Please Enter the Correct Mobile no.");
   } else {
     let randomNumber = Math.floor(Math.random() * 10);
     let tableCreate = document.createElement("tr");
@@ -36,13 +42,12 @@ function submit() {
     let tableRowEmail = document.createElement("td");
     let tableRowNumber = document.createElement("td");
     let tableRowCenter = document.createElement("td");
-  
+
     mainTable.appendChild(tableCreate);
     tableCreate.appendChild(tableRowName);
     tableCreate.appendChild(tableRowEmail);
     tableCreate.appendChild(tableRowNumber);
     tableCreate.appendChild(tableRowCenter);
-  
 
     let obj = {
       userName: userName.value,
