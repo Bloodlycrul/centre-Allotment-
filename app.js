@@ -20,18 +20,7 @@ let listOfTheCenter = [
 function submit() {
   // Create the Element for the table push
 
-  let tableCreate = document.createElement("tr");
-  let tableRowName = document.createElement("td");
-  let tableRowEmail = document.createElement("td");
-  let tableRowNumber = document.createElement("td");
-  let tableRowCenter = document.createElement("td");
-
-  mainTable.appendChild(tableCreate);
-  tableCreate.appendChild(tableRowName);
-  tableCreate.appendChild(tableRowEmail);
-  tableCreate.appendChild(tableRowNumber);
-  tableCreate.appendChild(tableRowCenter);
-
+ 
   if (userName.value && email.value && number.value === "") {
     alert("Fill All The Details");
   } else if (
@@ -42,6 +31,18 @@ function submit() {
     alert("This email id is already Register");
   } else {
     let randomNumber = Math.floor(Math.random() * 10);
+    let tableCreate = document.createElement("tr");
+    let tableRowName = document.createElement("td");
+    let tableRowEmail = document.createElement("td");
+    let tableRowNumber = document.createElement("td");
+    let tableRowCenter = document.createElement("td");
+  
+    mainTable.appendChild(tableCreate);
+    tableCreate.appendChild(tableRowName);
+    tableCreate.appendChild(tableRowEmail);
+    tableCreate.appendChild(tableRowNumber);
+    tableCreate.appendChild(tableRowCenter);
+  
 
     let obj = {
       userName: userName.value,
