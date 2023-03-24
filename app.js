@@ -20,8 +20,7 @@ let listOfTheCenter = [
 function submit() {
   // Create the Element for the table push
 
- 
-  if (userName.value && email.value && number.value === "") {
+  if (userName.value === "" || email.value === "" || number.value === "" ) {
     alert("Fill All The Details");
   } else if (
     match.some((e) => {
@@ -29,6 +28,7 @@ function submit() {
     })
   ) {
     alert("This email id is already Register");
+  
   } else {
     let randomNumber = Math.floor(Math.random() * 10);
     let tableCreate = document.createElement("tr");
