@@ -2,6 +2,8 @@ const userName = document.getElementById("name");
 const email = document.getElementById("email");
 const number = document.getElementById("mobile");
 const mainTable = document.getElementById("tablemain");
+const btn = document.querySelector('.btn');
+
 
 let match = [];
 let listOfTheCenter = [
@@ -20,7 +22,8 @@ let listOfTheCenter = [
 let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let IndNum = /^[0]?[789]\d{9}$/;
 
-function submit() {
+
+btn.addEventListener('click' ,function submit() {
   // Create the Element for the table push
 
   if (userName.value === "" || email.value === "" || number.value === "") {
@@ -61,5 +64,13 @@ function submit() {
     tableRowEmail.textContent = email.value;
     tableRowNumber.textContent = number.value;
     tableRowCenter.textContent = listOfTheCenter[randomNumber];
+
+    userName.value = "";
+    email.value = "";
+    number.value = "";
+    
+      
   }
-}
+})
+
+
