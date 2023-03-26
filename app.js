@@ -21,6 +21,7 @@ let listOfTheCenter = [
 
 let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let IndNum = /^[0]?[789]\d{9}$/;
+let chac = /^[a-zA-Z\s]+$/;
 
 
 btn.addEventListener('click' ,function submit() {
@@ -30,7 +31,9 @@ btn.addEventListener('click' ,function submit() {
     alert("Fill All The Details");
   } else if (!mailformat.test(email.value)) {
     alert("please Enter the right Gmail");
-  } else if (
+  } else if(!chac.test(userName.value)){
+    alert("Only Alphabet is allowed")
+  }else if (
     match.some((e) => {
       return e.email === email.value;
     })
