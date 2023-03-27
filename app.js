@@ -2,8 +2,7 @@ const userName = document.getElementById("name");
 const email = document.getElementById("email");
 const number = document.getElementById("mobile");
 const mainTable = document.getElementById("tablemain");
-const btn = document.querySelector('.btn');
-
+const btn = document.querySelector(".btn");
 
 let match = [];
 let listOfTheCenter = [
@@ -23,17 +22,15 @@ let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let IndNum = /^[0]?[789]\d{9}$/;
 let chac = /^[a-zA-Z\s]+$/;
 
-
-btn.addEventListener('click' ,function submit() {
+btn.addEventListener("click", function submit() {
   // Create the Element for the table push
-
   if (userName.value === "" || email.value === "" || number.value === "") {
     alert("Fill All The Details");
   } else if (!mailformat.test(email.value)) {
     alert("please Enter the right Gmail");
-  } else if(!chac.test(userName.value)){
-    alert("Only Alphabet is allowed")
-  }else if (
+  } else if (!chac.test(userName.value)) {
+    alert("Only Alphabet is allowed");
+  } else if (
     match.some((e) => {
       return e.email === email.value;
     })
@@ -71,9 +68,5 @@ btn.addEventListener('click' ,function submit() {
     userName.value = "";
     email.value = "";
     number.value = "";
-    
-      
   }
-})
-
-
+});
